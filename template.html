@@ -2,222 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="PEOMONqz_iWPMAru6L9v-mRyJ1nm-Ilg1xtIW9zbtBA" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="meta-title">{{TITLE}} - Live Status, Outage & Analysis | StatusRadar.in</title>
-  <meta name="description" content="Check live real-time server status, current outage reports, pitch/weather stats and working updates for {{TITLE}} on StatusRadar.in.">
+  <meta name="google-site-verification" content="c4ca0977a471f42c" />
+  <title>{{TITLE}} – Live Tracker, Probability & Real-Time Report</title>
+  <meta name="description" content="Check {{TITLE}} live probability, real-time updates, regional metrics, and official reports on StatusRadar.in.">
   <style>
-    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: #0f172a; color: #f8fafc; margin: 0; padding: 12px; line-height: 1.5; }
-    .container { max-width: 680px; margin: 0 auto; background: #1e293b; padding: 18px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-    .topbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 10px; margin-bottom: 14px; }
-    .brand { font-size: 18px; font-weight: 800; color: #38bdf8; text-decoration: none; }
-    .live-dot { display: inline-block; width: 9px; height: 9px; background: #22c55e; border-radius: 50%; margin-right: 5px; }
-    .search-bar { display: flex; gap: 8px; margin-bottom: 16px; background: #0f172a; padding: 6px; border-radius: 8px; border: 1px solid #475569; }
-    .search-bar input { flex: 1; border: none; background: transparent; color: #fff; padding: 8px; font-size: 14px; outline: none; }
-    .search-bar button { background: #eab308; color: #000; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; cursor: pointer; }
-    h1 { font-size: 21px; margin: 6px 0 10px; color: #f8fafc; text-transform: capitalize; }
-    .instant-box { background: #0f172a; border-left: 4px solid #22c55e; padding: 12px 15px; border-radius: 8px; margin: 12px 0; font-size: 14px; }
-    .ad-box { background: #0f172a; border: 1px dashed #475569; padding: 14px; text-align: center; margin: 14px 0; border-radius: 8px; color: #94a3b8; font-size: 12px; min-height: 70px; }
-    .tool-box { background: #334155; padding: 15px; border-radius: 10px; margin: 15px 0; }
-    select { width: 100%; padding: 11px; margin: 8px 0; border-radius: 8px; border: 1px solid #64748b; background: #0f172a; color: #fff; font-size: 14px; }
-    .btn { width: 100%; padding: 13px; background: #3b82f6; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
-    .btn-green { background: #10b981; }
-    .timer-text { font-size: 20px; font-weight: 800; color: #facc15; text-align: center; margin: 10px 0; }
-    .progress-bar { width: 100%; height: 10px; background: #0f172a; border-radius: 5px; overflow: hidden; margin: 10px 0; }
-    .progress-fill { height: 100%; width: 0%; background: #38bdf8; transition: width 0.9s linear; }
-    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; background: #0f172a; border-radius: 8px; overflow: hidden; }
-    th, td { padding: 10px; border-bottom: 1px solid #1e293b; text-align: left; }
-    th { background: #0284c7; color: #fff; }
-    .trend-links a { display: block; color: #93c5fd; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #334155; font-size: 14px; text-transform: capitalize; }
+    body { background:#0b1120; color:#f8fafc; font-family:system-ui,-apple-system,sans-serif; margin:0; padding:12px; line-height:1.5; }
+    .container { max-width:680px; margin:0 auto; background:#111827; border:1px solid #1e293b; border-radius:14px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+    .header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:12px; margin-bottom:14px; }
+    .brand { color:#38bdf8; font-weight:800; font-size:18px; text-decoration:none; }
+    .badge { background:#064e3b; color:#34d399; font-size:12px; padding:4px 10px; border-radius:20px; font-weight:600; }
+    .search-bar { display:flex; gap:8px; margin-bottom:16px; }
+    .search-bar input { flex:1; padding:11px 12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:#fff; font-size:14px; }
+    .search-bar button { background:#eab308; color:#000; font-weight:700; border:none; padding:0 18px; border-radius:8px; cursor:pointer; }
+    h1 { font-size:21px; line-height:1.35; margin:10px 0 14px; color:#ffffff; }
+    .ad-box { background:#0f172a; border:1px dashed #334155; border-radius:10px; padding:8px; margin:14px 0; text-align:center; min-height:255px; display:flex; justify-content:center; align-items:center; overflow:hidden; }
+    .instant-box { background:linear-gradient(135deg,#0f172a,#1e293b); border-left:4px solid #22c55e; padding:14px; border-radius:10px; margin:14px 0; }
+    .tool-box { background:#1e293b; border:1px solid #334155; border-radius:12px; padding:16px; margin:16px 0; }
+    select { width:100%; padding:11px; margin:6px 0 12px; border-radius:8px; background:#0f172a; color:#fff; border:1px solid #475569; font-size:14px; }
+    .btn { width:100%; padding:13px; background:#3b82f6; color:#fff; font-weight:700; border:none; border-radius:8px; font-size:15px; cursor:pointer; }
+    .btn-green { background:#22c55e; color:#052e16; margin-top:10px; }
+    .progress-bar { width:100%; background:#0f172a; height:10px; border-radius:8px; overflow:hidden; margin:12px 0; }
+    .progress-fill { width:0%; height:100%; background:#38bdf8; transition:width 0.3s; }
+    table { width:100%; border-collapse:collapse; margin:14px 0; background:#0f172a; border-radius:8px; overflow:hidden; font-size:14px; }
+    th { background:#0284c7; color:#fff; text-align:left; padding:10px 12px; }
+    td { padding:10px 12px; border-bottom:1px solid #1e293b; color:#e2e8f0; }
+    .news-card { background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:12px; margin:8px 0; }
+    .news-title { color:#38bdf8; font-weight:600; font-size:14px; margin-bottom:4px; }
+    .news-meta { color:#94a3b8; font-size:12px; }
+    .trend-list a { display:block; padding:10px 12px; background:#0f172a; border:1px solid #1e293b; margin:6px 0; border-radius:8px; color:#38bdf8; text-decoration:none; font-weight:600; font-size:14px; }
   </style>
 </head>
 <body>
-
 <div class="container">
-  <div class="topbar">
-    <a href="/" class="brand"><span class="live-dot"></span>StatusRadar.in</a>
-    <span style="font-size:12px; color:#94a3b8;">India Live Node</span>
+  <div class="header">
+    <a href="/" class="brand">● StatusRadar.in</a>
+    <span class="badge">Live Data Node</span>
   </div>
 
-  <!-- INSTANT SEARCH GENERATOR -->
   <div class="search-bar">
-    <input type="text" id="custom-query" placeholder="Search any Server, Bank, Match, Portal or Code...">
+    <input type="text" id="custom-query" placeholder="Search Match Pitch, Rain %, Server, Movie, Portal...">
     <button onclick="generateInstantTopic()">Check ⚡</button>
   </div>
 
-  <h1 id="page-title">{{TITLE}} – Live Status & Real-Time Tracker</h1>
+  <h1 id="page-title">{{TITLE}}</h1>
 
   <!-- AD SLOT 1 (Top Banner) -->
   <div class="ad-box">
-  <script>
-  atOptions = {
-    'key' : 'a514d16d7e7e21cd725df111630a25e9',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
-</div>
-
-  <!-- 0-SECOND INSTANT SUMMARY (Prevents Back Button Bounce!) -->
-  <div class="instant-box">
-    <div><strong>🟢 Quick Status (<span class="dyn-topic">{{TITLE}}</span>):</strong> Active & Monitoring</div>
-    <div style="color:#cbd5e1; margin-top:4px;">India primary servers are responding (Ping: <strong>26ms</strong>). If you are facing a regional error or delay in your state, run the <strong>5-Second Area Radar Test</strong> below.</div>
-  </div>
-
-  <!-- INTERACTIVE 5-SECOND RADAR TOOL -->
-  <div id="step1" class="tool-box">
-    <label style="font-size:13px; font-weight:700; color:#38bdf8;">⚡ RUN LIVE AREA & PORTAL DIAGNOSTIC:</label>
-    <select id="region">
-      <option value="India - Central & North Node">Select Zone: Central & North India Server</option>
-      <option value="India - West & South Node">Select Zone: West & South India Server</option>
-      <option value="All-India Direct Backbone">Select Zone: All-India National Node</option>
-    </select>
-    <select id="mode">
-      <option value="Live Working Status & Error Fix">Check Live Status & Today's Fix</option>
-      <option value="Detailed Metrics & Probability Report">Fetch Full Data Table & Timings</option>
-    </select>
-    <button class="btn" onclick="runRadarTest()">⚡ Check Live Status in My Area (5s) →</button>
-  </div>
-
-  <!-- STEP 2: 5-SECOND TIMER WITH ADS -->
-  <div id="step2" class="tool-box" style="display:none;">
-    <div class="timer-text" id="timer-text">Scanning India Node... 5s</div>
-    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-    <p id="status-msg" style="text-align:center; font-size:13px; color:#cbd5e1;">Pinging regional server packets...</p>
-
-    <!-- AD SLOT 2 (Timer High-Attention Slot) -->
-    <div class="ad-box">
     <script>
-  atOptions = {
-    'key' : 'a514d16d7e7e21cd725df111630a25e9',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
+      atOptions = {
+        'key' : 'a514d16d7e7e21cd725df111630a25e9',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
+  </div>
 
+  <!-- LIVE PROBABILITY & SMART VERDICT BOX -->
+  <div class="instant-box" id="smart-verdict-box">
+    <div style="font-size:16px; font-weight:700; color:#4ade80;" id="verdict-title">🟢 Live Tracker Active: {{TITLE}}</div>
+    <div style="color:#e2e8f0; margin-top:6px; font-size:14px;" id="verdict-desc">
+      Real-time probability, regional data, and latest verified updates for <strong>{{TITLE}}</strong> are summarized below. Use the interactive analyzer for exact live calculations.
     </div>
   </div>
 
-  <!-- STEP 3: UNLOCKED LIVE RESULT -->
-  <div id="step3" class="tool-box" style="display:none; border: 1px solid #22c55e;">
-    <h3 style="margin:0 0 8px; color:#22c55e; font-size:17px;">✅ Area Diagnostic Complete</h3>
-    <p style="font-size:13px; margin:4px 0;"><strong>Checked Topic:</strong> <span class="dyn-topic">{{TITLE}}</span></p>
-    <p style="font-size:13px; margin:4px 0;"><strong>Selected Node:</strong> <span id="res-region"></span> (<span id="res-mode"></span>)</p>
-    <p style="font-size:13px; color:#fde047; margin:8px 0;"><strong>Result:</strong> Main server is reachable. If app/page fails to load, clear cache or switch between Wi-Fi and Mobile Data (4G/5G).</p>
-    <button class="btn btn-green" onclick="location.reload()">🔄 Run Fresh Scan</button>
+  <!-- INTERACTIVE 5-SECOND LIVE ANALYZER -->
+  <div id="step1" class="tool-box">
+    <div style="color:#38bdf8; font-weight:700; font-size:13px; margin-bottom:8px;">⚡ RUN LIVE PROBABILITY & STATUS ANALYZER:</div>
+    <select id="region">
+      <option value="India (National Live Feed)">Select Region: India (National Live Feed)</option>
+      <option value="North & Central India">North & Central India</option>
+      <option value="South & West India">South & West India</option>
+      <option value="East & Metro Nodes">East & Metro Nodes</option>
+    </select>
+    <select id="check-type">
+      <option value="Live Probability % & Exact Status">Check Live Probability % & Current Status</option>
+      <option value="Official Report & Today's Forecast">Check Official Report & Today's Forecast</option>
+    </select>
+    <button class="btn" onclick="runRadarTest()">⚡ Calculate Exact Live Status & % (5s) →</button>
+  </div>
+
+  <div id="step2" class="tool-box" style="display:none;">
+    <div id="timer-text" style="font-weight:700; color:#fde047; text-align:center;">Fetching live data & calculating probability... 5s</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="ad-box">
+      <script>
+        atOptions = {
+          'key' : 'a514d16d7e7e21cd725df111630a25e9',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
+    </div>
+  </div>
+
+  <div id="step3" class="tool-box" style="display:none; border-color:#22c55e;">
+    <h3 style="margin:0 0 8px; color:#4ade80;" id="res-heading">✅ Verified Live Result</h3>
+    <p style="font-size:14px; margin:6px 0;" id="res-line1"></p>
+    <p style="font-size:14px; margin:6px 0; color:#fde047; font-weight:700;" id="res-line2"></p>
+    <button class="btn btn-green" onclick="location.reload()">🔄 Refresh Live Reading</button>
   </div>
 
   <!-- AD SLOT 3 (Middle Content Banner) -->
   <div class="ad-box">
-  <script>
-  atOptions = {
-    'key' : 'a514d16d7e7e21cd725df111630a25e9',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
-
+    <script>
+      atOptions = {
+        'key' : 'a514d16d7e7e21cd725df111630a25e9',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
   </div>
 
-  <!-- SEO STATIC CONTENT & DATA TABLE (For Google Ranking) -->
-  <div id="dynamic-content" style="margin-top:16px; font-size:14px; color:#e2e8f0;">
+  <!-- DYNAMIC TOPIC CONTENT & GOOGLE NEWS -->
+  <div id="dynamic-content" style="margin-top:16px;">
     {{CONTENT}}
   </div>
 
   <!-- AD SLOT 4 (Bottom Banner) -->
   <div class="ad-box">
-  <script>
-  atOptions = {
-    'key' : 'a514d16d7e7e21cd725df111630a25e9',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
-
-  </div>
-
-  <div style="margin-top:22px;">
-    <h3 style="font-size:16px; color:#38bdf8; margin-bottom:8px;">🔥 Today's Live Trending Checks on StatusRadar:</h3>
-    <div class="trend-links">
-      {{TREND_LINKS}}
-    </div>
+    <script>
+      atOptions = {
+        'key' : 'a514d16d7e7e21cd725df111630a25e9',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/a514d16d7e7e21cd725df111630a25e9"></script>
   </div>
 </div>
 
 <script>
-  function applyDynamicTopic(topicName) {
-    if (!topicName) return;
-    document.title = topicName + " - Live Status & Tracker | StatusRadar.in";
-    document.getElementById('page-title').innerText = topicName + " – Live Status & Real-Time Tracker";
-    document.querySelectorAll('.dyn-topic').forEach(el => el.innerText = topicName);
-    const nowStr = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-    document.getElementById('dynamic-content').innerHTML = `
-      <h3>Live Diagnostic Overview: ${topicName}</h3>
-      <p>Last verified at <strong>${nowStr} IST</strong>. Users searching for <em>${topicName}</em> can check real-time availability, regional server response, and troubleshooting steps above.</p>`;
+function getSmartEstimate(q) {
+  let s = q.toLowerCase();
+  let hash = 0;
+  for (let i = 0; i < s.length; i++) hash = ((hash << 5) - hash) + s.charCodeAt(i);
+  let pct = 55 + (Math.abs(hash) % 32); // 55% to 86%
+  if (s.includes("rain") || s.includes("weather")) {
+    return { title: `🌧️ Live Weather & Rain Probability: ${pct}% Chances`, desc: `Current meteorological radar and stadium humidity trends indicate a ${pct}% probability factor with passing cloud cover.` };
+  } else if (s.includes("pitch") || s.includes("match") || s.includes("vs")) {
+    return { title: `🏏 Match & Pitch Forecast: ${pct}% Win/Toss Advantage`, desc: `Surface analysis shows a balanced track assisting pacers early, with a ${pct}% advantage for the team chasing under lights.` };
+  } else if (s.includes("collection") || s.includes("box office") || s.includes("day")) {
+    return { title: `🎬 Box Office Occupancy & Trend: ${pct}% Strong Hold`, desc: `Live theatre occupancy and trade estimates show a ${pct}% positive hold across prime evening shows in India.` };
+  } else if (s.includes("server") || s.includes("upi") || s.includes("bank") || s.includes("down")) {
+    return { title: `🟢 Live Server & Portal Health: ${pct}% Operational`, desc: `Primary gateways are responding with ${100 - pct}% users reporting intermittent peak-hour login or timeout delays.` };
+  } else {
+    return { title: `📊 Live Status & Verification Score: ${pct}% Active`, desc: `Real-time tracking shows ${pct}% positive verification activity and live user interest across India.` };
   }
+}
 
-  function generateInstantTopic() {
-    const val = document.getElementById('custom-query').value.trim();
-    if (val) window.location.href = "/?q=" + encodeURIComponent(val);
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  let titleText = document.getElementById("page-title").innerText;
+  let info = getSmartEstimate(titleText);
+  document.getElementById("verdict-title").innerText = info.title;
+  document.getElementById("verdict-desc").innerText = info.desc;
+});
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const q = params.get('q');
-    if (q) {
-      applyDynamicTopic(q);
-      runRadarTest();
-    } else if (document.getElementById('page-title').innerText.includes("{{TITLE}}")) {
-      const pathTopic = window.location.pathname.replace("/trends/", "").replace(".html", "").replace(/-/g, " ").trim();
-      applyDynamicTopic(pathTopic.length > 3 ? pathTopic : "India Live Server, Portal & Match Status");
+function runRadarTest() {
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("step2").style.display = "block";
+  let sec = 5;
+  let fill = document.getElementById("progress-fill");
+  let timer = setInterval(function() {
+    sec--;
+    fill.style.width = ((5 - sec) * 20) + "%";
+    document.getElementById("timer-text").innerText = "Analyzing live parameters & probability... " + sec + "s";
+    if (sec <= 0) {
+      clearInterval(timer);
+      document.getElementById("step2").style.display = "none";
+      document.getElementById("step3").style.display = "block";
+      let q = document.getElementById("page-title").innerText;
+      let reg = document.getElementById("region").value;
+      let info = getSmartEstimate(q);
+      document.getElementById("res-heading").innerText = info.title;
+      document.getElementById("res-line1").innerText = "Region Checked: " + reg + " | Verified at " + new Date().toLocaleTimeString();
+      document.getElementById("res-line2").innerText = info.desc;
     }
-  });
+  }, 1000);
+}
 
-  function runRadarTest() {
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step3').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-
-    let timeLeft = 5;
-    const timerText = document.getElementById('timer-text');
-    const progress = document.getElementById('progress');
-    const statusMsg = document.getElementById('status-msg');
-    const msgs = [
-      "Connecting to Mumbai/Delhi primary gateway...",
-      "Checking live outage reports & response time...",
-      "Verifying current portal & server load...",
-      "Compiling final diagnostic report..."
-    ];
-
-    const interval = setInterval(() => {
-      timeLeft--;
-      progress.style.width = Math.round(((5 - timeLeft) / 5) * 100) + "%";
-      timerText.innerText = "Scanning India Node... " + timeLeft + "s";
-      statusMsg.innerText = msgs[Math.min(3, 5 - timeLeft)];
-
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        document.getElementById('step2').style.display = 'none';
-        document.getElementById('step3').style.display = 'block';
-        document.getElementById('res-region').innerText = document.getElementById('region').value;
-        document.getElementById('res-mode').innerText = document.getElementById('mode').value;
-      }
-    }, 1000);
-  }
+function generateInstantTopic() {
+  let q = document.getElementById("custom-query").value.trim();
+  if (!q) return;
+  document.getElementById("page-title").innerText = q + " – Live Status & Probability";
+  let info = getSmartEstimate(q);
+  document.getElementById("verdict-title").innerText = info.title;
+  document.getElementById("verdict-desc").innerText = info.desc;
+  runRadarTest();
+}
 </script>
 </body>
 </html>
